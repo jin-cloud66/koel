@@ -1,0 +1,8 @@
+services:
+  web:
+    command: "php artisan serve --host=0.0.0.0 --port=8000"
+    port: 8000
+    git_url: git@github.com:jin-cloud66/koel.git
+    git_branch: main
+    dockerfile: Dockerfile
+    tags: ["cloud66.sourdough"]
