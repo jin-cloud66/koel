@@ -8,6 +8,5 @@ RUN apt-get update -qq \
 COPY . /app
 RUN composer install
 RUN git submodule update --init --recursive --remote
-RUN yarn install
-RUN cd resources/assets && yarn install
-RUN yarn build
+RUN yarn install && cd resources/assets && yarn install
+RUN yarn build && cp -rf resources ./app/
