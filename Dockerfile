@@ -1,4 +1,4 @@
-FROM bitnami/laravel:8
+FROM bitnami/laravel:9
 
 WORKDIR /app
 
