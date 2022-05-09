@@ -1,0 +1,12 @@
+FROM bitnami/laravel:8
+
+WORKDIR /app
+
+RUN apt-get update -qq \
+    && apt-get install -y git python2 build-essential 
+
+COPY . /app
+RUN composer install
+RUN git submodule update --init --recursive --remote
+RUN yarn install && cd resources/assets && yarn install
+RUN yarn build && cp -rf resources ./app/
